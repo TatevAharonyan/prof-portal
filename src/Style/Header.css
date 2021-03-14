@@ -1,0 +1,56 @@
+.App-header {
+  width: 100%;
+  height: 70px;
+  background-color: #b5b8bb9c;
+  padding: 17px 3vw;
+  display: flex;
+  vertical-align: baseline;
+  text-align:center;
+  align-items: center;
+}
+
+.nav_logo{
+  width: 83%;
+  height:auto;
+  display: flex;
+}
+
+.headerButton {
+  display: flex;
+  position: absolute;
+  right: 0;
+}
+
+.headerButton div {
+  width: 90px;
+  height: 30px;
+  text-align:center;
+  align-items:center;
+  background-color:transparent;
+  outline: none;
+  font-size: 19px;
+  font-weight:600;
+}
+.headerButton a {
+  color:#73b7c3;
+}
+
+.headerButton div a:hover {
+  color:white;
+}
+
+a {
+  list-style: none;
+  text-decoration: none;
+}
+
+.logo2 {
+  height: 35px;
+}
+
+@media (max-width: 500px) {
+  .Logo1 {
+    display: none;
+  }
+  
+}
