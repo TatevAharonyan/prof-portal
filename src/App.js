@@ -1,9 +1,15 @@
-import Header from './Header/Header-index';
+import Header from './Main/Header/Header-index';
 import './Style/Header.css';
 import './Style/App.css';
 import './Style/Section1.css';
-import Footer from './Footer';
-import Section1 from './Section1/Index';
+import './Style/Section234.css';
+import Footer from './Main/Footer';
+import Section1 from './Main/Section1/Index';
+import Section2 from './Main/Section2/Index';
+import Section3 from './Main/Section3/Index';
+import Section4 from './Main/Section4/Index';
+
+
 
 
 function App() {
@@ -11,6 +17,9 @@ function App() {
     <div className="App">
      <Header/>
      <Section1/>
+     <Section2/>
+     <Section3/>
+     <Section4/>
      <Footer/>
 
     </div>

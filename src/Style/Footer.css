@@ -23,8 +23,9 @@ display: block;
     color: #73b7c3;
     font-weight:700;
 }
-#p {
+.p {
     color: white;
+    text-align: left;
     font-size: 15px;
     margin: 0 0 3px 0;
 }
@@ -54,4 +55,8 @@ display: block;
    width: 40%;
    height:inherit;
    text-align:right;
+}
+
+a {
+    color:#959e3b; 
 }
