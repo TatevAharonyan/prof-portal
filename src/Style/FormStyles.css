@@ -1,0 +1,132 @@
+
+.text {
+    width: 90%;
+    height: 40px;
+    border: 1px solid rgb(90, 88, 88);
+    border-radius: 5px;
+    margin: 5% 5% 0;
+    background-color: rgba(231, 235, 235, 0.541);
+    cursor: pointer;
+    color: rgb(29, 28, 28);
+  }
+
+  .name {
+    width: 40%;
+    height: 40px;
+    border: 1px solid rgb(90, 88, 88);
+    border-radius: 5px;
+    margin: 5% 4% 0 4.5%;
+    background-color: rgba(231, 235, 235, 0.541);
+    cursor: pointer;
+    color: rgb(29, 28, 28);
+  }
+
+  .name:focus {
+    outline: none;
+    background-color:  rgba(63, 116, 116, 0.397);
+  }
+
+  .name:hover {
+    background-color:  rgba(63, 116, 116, 0.397);
+  }
+  
+  .date {
+    height: 30px;
+    margin-top: 5%;
+    border: 1px solid rgb(90, 88, 88);
+    border-radius: 5px;
+    cursor: pointer;
+    color: rgb(58, 57, 57);
+  }
+  
+  .date:focus {
+    outline: none;
+  }
+
+  .country {
+    height: 30px;
+    margin-top: 5%;
+    border: 1px solid rgb(90, 88, 88);
+    border-radius: 5px;
+    cursor: pointer;
+    color: rgb(58, 57, 57);
+  }
+  
+  .country:focus {
+    outline: none;
+    background-color:  rgba(63, 116, 116, 0.397);
+  }
+
+  .city {
+    height: 30px;
+    margin-top: 5%;
+    margin-left: 5%;
+    border: 1px solid rgb(90, 88, 88);
+    border-radius: 5px;
+    cursor: pointer;
+    color: rgb(58, 57, 57);
+  
+  }
+
+  .city:focus {
+    outline: none;
+    background-color:  rgba(63, 116, 116, 0.397);
+  }
+  
+  form {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .text:focus {
+    outline: none;
+  }
+  
+  .text:hover {
+    background-color:  rgba(63, 116, 116, 0.397);
+  }
+  
+  .SignIn {
+    width: 40%;
+    height: 500px;
+    display: flex;
+    margin: 0 auto;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(56, 56, 56, 0.322);
+    /* background: url(./img/cover.jpg); */
+  }
+  
+  input.rem {
+    display: inline;
+    margin-right: 3px;
+  }
+  
+  p.valid {
+    padding: 0;
+    margin: 0; 
+    font-size: 12px;
+    color: red;
+  }
+  
+  p.rem {
+    display: inline-block;
+  }
+  
+  #submit {
+    width: 90%;
+    height: 30px;
+    color: rgb(63, 116, 116);;
+    background-color: rgba(0, 0, 0, 0);
+    border: 3px solid rgb(63, 116, 116);
+    border-radius: 5px;
+    margin-bottom: 5%;
+    /* margin-left: 5%; */
+  }
+  
+  #submit:focus {
+    outline: none;
+    color: white;
+  }
