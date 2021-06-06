@@ -21,9 +21,7 @@ const  Header = () => {
         <nav className="app-header" >
             <Logo />
             <HeaderButton  onButtonClick={(handleButtonClick)} />
-            {/* {mode === 'signIn' && <SignIn/>} */}
             {isOpen && mode === 'signIn' ? <SignIn onClose= {(onClose)}/> : null }
-            {/* {mode === 'signUp' && <SignUp />} */}
             {isOpen && mode === 'signUp' ? <SignUp onClose= {(onClose)}/> : null }
         </nav>
     )
