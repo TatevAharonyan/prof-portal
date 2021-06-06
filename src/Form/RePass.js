@@ -18,9 +18,9 @@ import React, { useState } from 'react';
     return (
        <div>
            <input type="password" placeholder="Enter your password" className="text" onChange={(e)=>{
-            setPassword(e.target.value);}} required />
+            setPassword(e.target.value);}} />
             <input type="password" placeholder="Confirm your password" className="text" onChange = {(e)=>{
-            setRePassword(e.target.value);}} onBlur = {passwordValidation} required />
+            setRePassword(e.target.value);}} onBlur = {passwordValidation}/>
             <p className="valid">{valid}</p>
        </div>
      

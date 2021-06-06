@@ -13,12 +13,14 @@ import Section4 from './Main/Section4/Index';
 function App() {
   return (
     <div className="App">
-     <Header/>
-     <Section1/>
-     <Section2/>
-     <Section3/>
-     <Section4/>
-     <Footer/>
+      <Header />
+      <div>
+        <Section1 />
+        <Section2 />
+        <Section3 />
+        <Section4 />
+      </div>
+      <Footer />
 
     </div>
   );

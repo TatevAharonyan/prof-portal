@@ -1,13 +1,12 @@
 #footer {
 width: 100%;
 height: auto;
-background-color:#b5b8bbe3;
+background-color:#676666;
 display: block;
 }
 
 .footer-top {
     width: 100%;
-    /* Height:300px; */
     display:flex;
 }
 

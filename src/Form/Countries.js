@@ -3,7 +3,7 @@ import React from 'react';
 function Countries (){
     return (
         <div>
-        <select className="country" name="country" required >
+        <select className="country" name="country" >
             <option value="Select">Select your country...</option>
             <option value="Afganistan">Afghanistan</option>
             <option value="Albania">Albania</option>

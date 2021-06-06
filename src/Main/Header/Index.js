@@ -8,16 +8,23 @@ const  Header = () => {
     //
 
     const [mode, setMode] = useState('');
+    const [isOpen, setIsOpen] = useState (false)
+
     const handleButtonClick = (buttonType) => {
+        setIsOpen(true);
       setMode(buttonType);
     };
+
+    const onClose = () => setIsOpen(false);
     //
     return (
-        <nav className="App-header" >
+        <nav className="app-header" >
             <Logo />
-            <HeaderButton  onButtonClick={(handleButtonClick)}/>
-            {mode === 'signIn' && <SignIn/>}
-            {mode === 'signUp' && <SignUp />}
+            <HeaderButton  onButtonClick={(handleButtonClick)} />
+            {/* {mode === 'signIn' && <SignIn/>} */}
+            {isOpen && mode === 'signIn' ? <SignIn onClose= {(onClose)}/> : null }
+            {/* {mode === 'signUp' && <SignUp />} */}
+            {isOpen && mode === 'signUp' ? <SignUp onClose= {(onClose)}/> : null }
         </nav>
     )
 }

@@ -1,7 +1,8 @@
-.App-header {
+.app-header {
   width: 100%;
   height: 70px;
-  background-color: #b5b8bb9c;
+  /* background-color: #b5b8bb9c; */
+  background-color: #676666;
   padding: 17px 3vw;
   display: flex;
   vertical-align: baseline;

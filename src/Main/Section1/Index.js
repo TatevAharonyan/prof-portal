@@ -4,7 +4,7 @@ import WelcomePortalButton from "./Text_Welcom_&_Button";
 
 const  Section1 = () => {
     return (
-        <section id="section1">
+        <section className="section1">
 
             {/* Section1 text Welcome and nav button */}
 

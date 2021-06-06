@@ -21,7 +21,7 @@ function Birthday (){
     return (
         <div>
             <label>Date of birth: </label>
-            <input className="date" type="date" required onChange={(e)=>{
+            <input className="date" type="date" onChange={(e)=>{
             setBirthDay(e.target.value);}} onBlur = {calculateAge} />
             {/* <p>{age}</p> */}
         </div>

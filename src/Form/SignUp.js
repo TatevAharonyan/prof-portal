@@ -9,21 +9,26 @@ import Countries from './Countries';
 
 
 
-function SignUp (){
+function SignUp({ onClose }) {
+
+
     return (
-        <div className="SignIn">
-            <form>
-            <Name placeHolder = "First name..." />
-            <Name placeHolder = "Last name..." />
-            <Email />
-            <RePass />
-            <Birthday />
-            <Countries />
-            <RememberMe />
-            <Submit buttonValue="SIGN UP" />
-            </form>
+        <div className="wrapp_form">
+            <div className="SignIn  popup">
+                <span className="close_popup" onClick= {onClose} >x</span>
+                <form>
+                    <Name placeHolder="First name..." />
+                    <Name placeHolder="Last name..." />
+                    <Email />
+                    <RePass />
+                    <Birthday />
+                    <Countries />
+                    <RememberMe />
+                    <Submit buttonValue="SIGN UP" />
+                </form>
+            </div>
         </div>
-      );
+    );
 }
 
 export default SignUp
