@@ -6,23 +6,25 @@ import RememberMe from "./RememberMe";
 import Submit from "./Submit";
 import Birthday from './Birthday';
 import Countries from './Countries';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { enterUserEmail, enterUserPass, enterUserBirthday, enterUserFirstName, enterUserLastName, enterUserCountries } from "./../action/signUpAction"
 
 
-
-function SignUp({ onClose }) {
+function SignUp( props ) {
 
 
     return (
         <div className="wrapp_form">
             <div className="SignIn  popup">
-                <span className="close_popup" onClick= {onClose} >x</span>
+                <span className="close_popup" onClick= {props.onClose} >x</span>
                 <form>
-                    <Name placeHolder="First name..." />
-                    <Name placeHolder="Last name..." />
-                    <Email />
-                    <RePass />
-                    <Birthday />
-                    <Countries />
+                    <Name placeHolder="First name..."  dispatch = { e => props.enterUserFirstName(e)} />
+                    <Name placeHolder="Last name..."  dispatch = { e => props.enterUserLastName(e)} />
+                    <Email  dispatch = { e => props.enterUserEmail (e) } />
+                    <RePass dispatch = { e => props.enterUserPass (e) } />
+                    <Birthday  dispatch = { e => props.enterUserBirthday (e) } />
+                    <Countries dispatch = { countries => props.enterUserCountries (countries) }/>
                     <RememberMe />
                     <Submit buttonValue="SIGN UP" />
                 </form>
@@ -31,4 +33,27 @@ function SignUp({ onClose }) {
     );
 }
 
-export default SignUp
+
+const mapStateToProps = state => {
+    console.log(state, "stateee")
+    return {
+      signUp: state.SignUp,
+    }
+  }
+  
+  const mapDispatchToProps = dispatch => {
+  
+    return bindActionCreators({
+        enterUserEmail,
+        enterUserPass,
+        enterUserBirthday,
+        enterUserFirstName,
+        enterUserLastName,
+        enterUserCountries,
+    },
+      dispatch
+    )
+  }
+  
+  export default connect(mapStateToProps, mapDispatchToProps)(SignUp);
+// export default SignUp

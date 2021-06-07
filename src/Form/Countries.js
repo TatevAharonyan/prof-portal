@@ -1,9 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-function Countries (){
+function Countries ({ dispatch }){
+
+    const [country, setCountry] = useState ("");
+    const [ city, setCity ] = useState ("");
+    const [error, setError] = useState ("");
+    
+
+const changeCountry = e => {
+    setCountry(e.target.value);
+}
+
+    const chengeCity = e => {
+        setCity (e.target.value);
+    }
+
+    const onBlurCity = () => {
+        let countries = city + ", " + country
+        if ( city === "" ) {
+            setError("Enter the name of the city");
+        } else {
+            dispatch(countries);
+            setError("");
+            
+        }
+    }
+
     return (
         <div>
-        <select className="country" name="country" >
+        <select className="country" name="country"  onBlur = {changeCountry} >
             <option value="Select">Select your country...</option>
             <option value="Afganistan">Afghanistan</option>
             <option value="Albania">Albania</option>
@@ -252,7 +277,16 @@ function Countries (){
             <option value="Zambia">Zambia</option>
             <option value="Zimbabwe">Zimbabwe</option>
         </select>
-        <input type="text" className="city" placeholder="Enter your city..." />
+
+        <input 
+        type="text" 
+        className="city" 
+        placeholder="Enter your city..."  
+        value = {city} 
+        onChange = {chengeCity}
+        onBlur = {onBlurCity}
+        />
+        { error && < p className = "valid" > { error } </p>}
     </div>
     )
 }

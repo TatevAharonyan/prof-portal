@@ -5,12 +5,14 @@ const regEx = (text) => {
     return text.match(mailformat);
 }
 
-function Email (props) {    
+function Email(props) {
     const [emailWarning, setEmailWarning] = useState("");
 
     const onBlurChange = (e) => {
         if (regEx(e.target.value)) {
-            setEmailWarning("Valid email!");
+            // setEmailWarning("Valid email!");
+            setEmailWarning("");
+            props.dispatch(e);
         } else {
             setEmailWarning("Email adress is not valid!");
         }
@@ -18,8 +20,13 @@ function Email (props) {
 
     return (
         <div>
-        <input type="email" placeholder="Enter your email..." className="text" onBlur={onBlurChange} />
-        <p className="valid">{emailWarning}</p>
+            <input
+                type="email"
+                placeholder="Enter your email..."
+                className="text"
+                onBlur={onBlurChange}
+            />
+            {emailWarning !== "" && <p className = "valid"> { emailWarning } </p> }
         </div>
     );
 };
