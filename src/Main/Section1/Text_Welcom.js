@@ -4,7 +4,7 @@ import React from "react";
 const WelcomePortal = () => {
     return (
         <div id="welcome_portal">
-            <h1>Welcome to your professional portal</h1>
+            <h1>Welcome to our professional portal</h1>
         </div>
     )
 }

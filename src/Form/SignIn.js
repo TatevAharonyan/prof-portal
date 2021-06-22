@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Email from "./Email";
 import Password from './Password';
 import RememberMe from "./RememberMe";
@@ -7,38 +7,59 @@ import './../Style/FormStyles.css';
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { enterEmail, enterPass } from "./../action/signInAction"
+import SignUp from "./SignUp";
 
 
-function SignIn({ onClose, signIn, enterEmail, enterPass }) {
+function SignIn({ onClose, signIn, enterEmail, enterPass, LoggedIn }) {
+ 
+  const [validEmail, setValidEmail] = useState (true);
+  const [validPass, setValidPass] = useState (true);
+  const URL = 'https://jsonplaceholder.typicode.com/users';
 
+ 
   const formSignIn = (e) => {
     e.preventDefault();
 
+    if (signIn.email === "") {
+      setValidEmail( false );
+      return false;
+    } else {
+      setValidEmail ( true );
+    }
+     if ( signIn.pass === "") {
+      setValidPass ( false );
+      return false;
+    } else {
+      setValidPass ( true );
+    }
+
     console.log(signIn, "signIn")
     
-    // fetch('https://jsonplaceholder.typicode.com/posts', {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify(signIn),
-    // })
-    //   .then(response => {
-    //     if (response.status === 200) {
-    //       console.log(response, "response")
-    //       return response.json()
-    //     }
-    //     else console.log("we have an error")
-    //   })
-    //   .then(data => {
-    //     console.log(data, "data")
-    //     // dispatch({
-    //     //     type: SERVER_DATA,
-    //     //     payload: data
-    //     // })
-    //   })
-    //   .catch(erro => console.log(error))
-  // }
+    fetch(URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(signIn),
+    })
+      .then(response => {
+        if (response.status >= 200 || response.status < 210) {
+          console.log(response, "response")
+          return response.json()
+        }
+        else console.log("we have an error")
+      })
+      .then(data => {
+        console.log(data, "daata");
+     
+        LoggedIn();
+        onClose();
+
+
+
+      })
+      .catch(erro => console.log("error"))
+  
 }
 
 
@@ -48,19 +69,27 @@ function SignIn({ onClose, signIn, enterEmail, enterPass }) {
       { console.log(signIn)}
       <div className="SignIn popup">
         <span className="close_popup" onClick={onClose} >x</span>
-        <form method="POST" onSubmit={formSignIn}>
+        <form 
+        method="POST"
+         onSubmit={formSignIn}
+         >
+        <h3>Sign In</h3>
           <Email
+          validEmail = { validEmail}
             placeHolder="Enter your email..."
             dispatch={ e => enterEmail(e) }
           />
           <Password
             dispatch={ e => enterPass(e) }
+            validPass = { validPass }
           />
           <RememberMe />
-          <Submit
+          <Submit 
             buttonValue="SIGN IN"
           />
+            <p  style = {{margin: 0}} >If you have not yet registered,  <a href = "#" >Sign Up</a> </p>
         </form>
+      
       </div>
     </div>
   );

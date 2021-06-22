@@ -1,0 +1,154 @@
+.jobOffers_wrapper {
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+.announcements {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.announcements_container {
+  width: 48.5%;
+  height: 90%;
+  box-sizing: border-box;
+  padding: 2.5%;
+  margin: 0.5%;
+  /* border: 1px solid rgb(90, 90, 90); */
+  /* rgba(38,56,82,255); */
+  border-radius: 2px;
+  overflow-y: scroll;
+}
+
+.openAnnouncement  {
+  width: 48.5%;
+  height: 90%;
+  box-sizing: border-box;
+  padding: 2%;
+  margin: 0.5%;
+  /* border: 1px solid rgb(90, 90, 90); */
+  border-radius: 2px;
+}
+
+.announcement_wrapper {
+  width: 100%;
+  margin: 0;
+}
+
+.position {
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
+
+.company_logo {
+  width: 7vh;
+  height: 7vh;
+  background-color: #959e3b;
+  background-size: cover;
+  display: inline-block;
+  margin-right: 2%;
+}
+
+.company_logo_big {
+  width: 10vh;
+  height: 10vh;
+  background-color: #959e3b;
+  background-size: cover;
+  display: inline-block;
+  margin-right: 2%;
+}
+
+.job_title {
+  display: inline;
+}
+
+p.info, p.title {
+  font-weight: bold;
+  color: rgb(90, 90, 90);
+}
+
+p.title {
+  font-size: 1.2rem;
+}
+
+p.title:hover {
+  text-decoration: underline;
+}
+
+span {
+  font-weight: normal;
+  color: rgb(90, 90, 90);
+}
+
+.apply {
+    width: 50%;
+    background:  rgb(63, 116, 116);
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 2%;
+    padding: 0.7rem;
+    border-radius: 2px;
+    border: 1px solid rgb(63, 116, 116);
+}
+
+.apply:focus {
+    outline: #73b7c3;
+
+}
+
+.apply:hover {
+    background-color: rgba(63, 116, 116, 0.712);
+}
+
+.details {
+  /* margin-top: 10%; */
+  height: 60%;
+  overflow-y: scroll;
+}
+
+.sticky_popup {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  margin-left: 50%;
+  border: 1px solid rgb(90, 90, 90);
+  width: 50%;
+
+  position: sticky;
+  background-color: white;
+  z-index: 999999;
+}
+
+.submit {
+  width: 50%;
+  color: rgb(63, 116, 116);
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0.7rem;
+  background-color: rgba(0, 0, 0, 0);
+  border: 3px solid rgb(63, 116, 116);
+  border-radius: 2px;
+  margin-bottom: 5%;
+}
+
+.submit:hover {
+  background-color: rgba(63, 116, 116, 0.363);
+}
+
+.sticky_popup h3, .sticky_popup p {
+  margin: 0;
+  margin-top: 5%;
+}
+
+.sticky_popup .close_popup {
+  font-size: 1rem;
+  margin: 0;
+  
+}

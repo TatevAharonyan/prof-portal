@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 
-function Birthday ( {dispatch} ){
+function Birthday ( {dispatch, birthday} ){
     const [birthDay, setBirthDay] = useState("");
     const [age, setAge] = useState(0);
    

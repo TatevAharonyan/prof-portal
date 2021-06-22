@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 
-function Countries ({ dispatch }){
+function Countries ({ dispatch, countries }){
 
     const [country, setCountry] = useState ("");
     const [ city, setCity ] = useState ("");
-    const [error, setError] = useState ("");
+    const [error, setError] = useState ( true );
     
 
 const changeCountry = e => {
@@ -18,10 +18,10 @@ const changeCountry = e => {
     const onBlurCity = () => {
         let countries = city + ", " + country
         if ( city === "" ) {
-            setError("Enter the name of the city");
+            setError( false );
         } else {
             dispatch(countries);
-            setError("");
+            setError(true);
             
         }
     }
@@ -286,7 +286,7 @@ const changeCountry = e => {
         onChange = {chengeCity}
         onBlur = {onBlurCity}
         />
-        { error && < p className = "valid" > { error } </p>}
+       { !countries || !error ?  < p className = "valid" > Enter the name of the city </p> : null}
     </div>
     )
 }

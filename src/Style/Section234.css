@@ -3,24 +3,26 @@
     height: auto;
     display: flex;
     align-items: center;
+    margin :1.5%;
 }
 
 .foto-section2 {
-    width: 50%;
+    width: 30%;
     height: inherit;
-    /* border: 1px solid #5a5a54; */
+    overflow: auto;  
+    
     display: flex;
    justify-content: center;
    align-items: center;
+   
 }
 
 .img_section2 {
-    display: block;
-    width: 50%;
+    width: 100%;
 }
 
 .text_section2 {
-    width: 50%;
+    width: 60%;
     padding: 2.5rem;
     height: inherit;
 }
@@ -33,16 +35,17 @@
 
  .text_section2 P {
     padding: 0 2rem;
+    font-size:1em;
     text-align:center;
     align-items: center;  
-    color: black;  
+    color: rgb(90, 90, 90);;  
 }
 
 #black {
     color:black;
 }
 
-@media (max-width: 963px) {
+@media screen and (max-width: 966px) {
     .section234 {
       flex-wrap: wrap;
     }
@@ -55,10 +58,6 @@
     .text_section2 {
         width: 60%;
         padding: 0;
-    }
-
-    .img_section2 {
-        width:auto;
     }
 }
 

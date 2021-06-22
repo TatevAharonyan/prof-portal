@@ -3,26 +3,29 @@ import React, { useState } from 'react';
 function RePass(props) {
    const [password, setPassword] = useState("");
    const [rePassword, setRePassword] = useState('');
-   const [validPassword, setValidPassword] = useState('');
-   const [validRePassword, setValidRePassword] = useState('');
+   const [validPassword, setValidPassword] = useState(true);
+   const [validRePassword, setValidRePassword] = useState( true );
 
    const checkValidPassword = e => {
       setPassword(e.target.value);
-      if (password === "" || password.length < 8) {
-         setValidPassword("password must min 8 characters long");
+      if (!password.match(/[a-z]/g) ||
+      !password.match(/[A-Z]/g) ||
+      !password.match(/[0-9]/g) ||
+      password.length < 8) {
+         setValidPassword( false );
       }
       else {
-         setValidPassword("");
+         setValidPassword( true );
       }
    }
 
    const checkValidRePassword = (e) => {
       setRePassword(e.target.value);
-      if (typeof password !== undefined && password === rePassword) {
-         setValidRePassword("");
+      if ( password !== "" && password === rePassword) {
+         setValidRePassword( true );
          props.dispatch(e);
       } else {
-         setValidRePassword("Passwords don't match!");
+         setValidRePassword( false );
       }
    }
 
@@ -34,14 +37,17 @@ function RePass(props) {
             className="text"
             onBlur={checkValidPassword}
          />
-         { validPassword && <p className="valid" > {validPassword} </p>}
+         { !validPassword ? <p className="valid" > Passwords don't match! </p> :null}
+         {/* { validPassword  && <p className="valid">{validPassword}</p>} */}
 
          <input
             type="password"
             placeholder="Confirm your password"
             className="text"
             onBlur={checkValidRePassword} />
-         { validRePassword && <p className="valid">{validRePassword}</p>}
+         {/* { validRePassword  && <p className="valid">{validRePassword}</p>} */}
+         { !validRePassword || !props.validPass? <p className="valid" > Passwords don't match! </p> :null}
+
       </div>
 
    )

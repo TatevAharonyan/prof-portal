@@ -2,25 +2,21 @@ import React, { useState } from "react";
 
 
 function Name(props) {
-    const [warning, setWarning] = useState("")
-
-// const valid = e => {
-   
-//     }
+    const [warning, setWarning] = useState( true );
     
 
 const onBlurChange = (e) => {
     if (e.target.value === "" || e.target.value === undefined ) {
-        setWarning ("Fill in the field");
+        setWarning ( false );
     } else {
         props.dispatch(e);
-        setWarning ("") 
+        setWarning ( true ) 
     };
 
 }
 
     return (
-        <>
+        <div className = "name_wrapper">
             <input 
             type="text"
             placeholder={props.placeHolder} 
@@ -28,8 +24,8 @@ const onBlurChange = (e) => {
             onBlur = { onBlurChange }
             />
 
-            { warning !== "" && <span className  = "valid" > { warning } </span> }
-        </>
+            { (!warning || !props.validName ) ? <span className  = "valid" > Fill in the field </span> : null}
+        </div>
     );
 };
 

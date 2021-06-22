@@ -1,3 +1,5 @@
+// section 1
+export const OPEN_JOB_OFFERS = "OPEN_JOB_OFFERS";
 
 // form signIn const
 export const ENTER_EMAIL = "ENTER_EMAIL";

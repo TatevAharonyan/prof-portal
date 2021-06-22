@@ -4,15 +4,15 @@ import Logo from "./Img";
 import SignIn from "./../../Form/SignIn";
 import SignUp from "./../../Form/SignUp";
 
-const  Header = () => {
+const Header = ({ LoggedIn }) => {
     //
 
     const [mode, setMode] = useState('');
-    const [isOpen, setIsOpen] = useState (false)
+    const [isOpen, setIsOpen] = useState(false)
 
     const handleButtonClick = (buttonType) => {
         setIsOpen(true);
-      setMode(buttonType);
+        setMode(buttonType);
     };
 
     const onClose = () => setIsOpen(false);
@@ -20,9 +20,16 @@ const  Header = () => {
     return (
         <nav className="app-header" >
             <Logo />
-            <HeaderButton  onButtonClick={(handleButtonClick)} />
-            {isOpen && mode === 'signIn' ? <SignIn onClose= {(onClose)}/> : null }
-            {isOpen && mode === 'signUp' ? <SignUp onClose= {(onClose)}/> : null }
+            <HeaderButton onButtonClick={(handleButtonClick)} />
+            {isOpen && mode === 'signIn' ? <SignIn
+                LoggedIn={LoggedIn}
+                onClose={(onClose)}
+            /> : null}
+            {isOpen && mode === 'signUp' ? <SignUp
+             
+                LoggedIn={LoggedIn}
+                onClose={(onClose)}
+            /> : null}
         </nav>
     )
 }
