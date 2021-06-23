@@ -12,9 +12,10 @@ import Section3 from './Main/Section3/Index';
 import Section4 from './Main/Section4/Index';
 import { Fragment, useState } from 'react';
 import JobOffers from "./Job_offers/index";
-
+import {jobInfo_const, job_button_text_const} from "./constaat/constantJobOffers"
 
 function App(props) {
+
   const { announcementName } = props;
   console.log(props.announcementName);
 
@@ -23,13 +24,16 @@ function App(props) {
   const LoggedIn = () => {
     setIsLoggedIn(true);
   }
+let jobInfo = jobInfo_const;
+let job_button_text = job_button_text_const;
+
 
   return (
     <div className="App">
        { !isLoggedIn ?
       <Fragment >
         <Header  LoggedIn = { LoggedIn } />
-        {announcementName === "Job offers" && <JobOffers  />}
+        {announcementName === "Job offers" && <JobOffers jobInfo = {jobInfo } job_button_text = {job_button_text} />}
         {announcementName === "Job seekers" && <div style={{ background: 'yello' }}>"Job offers"</div>}
         {announcementName === "Available trainings" && <div style={{ background: 'green' }}>"Available trainings"</div>}
         {!announcementName && <div id="main_wrapper">
